@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sosaheri/kum-cms)
+
 # mini-CMS (file-based)
 
 Este repositorio contiene una landing desacoplada que actúa como un mini-CMS usando archivos JSON/Markdown como fuente de verdad.
