@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>mini-CMS</title>
+    <!-- Fuentes e Iconos necesarios para themes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- EmailJS (opcional, algunas plantillas usan EmailJS) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Theme stylesheet (modifiable at runtime) -->
+    <link id="theme-stylesheet" rel="stylesheet" href="themes/default/theme.css">
+    <link rel="stylesheet" href="lib/framework/core.css">
+  </head>
+  <body>
+
+    <!-- Theme root: partials will be mounted here. Keeps the rest of the document (head/scripts) intact. -->
+    <div id="theme-root"></div>
+
+    <!-- Core JS (motor) y configuración (module) -->
+    <script type="module" src="js/config.js"></script>
+
+  </body>
+</html>

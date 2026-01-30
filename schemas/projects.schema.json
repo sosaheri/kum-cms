@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "desc"],
+    "properties": {
+      "name": { "type": "string" },
+      "desc": { "type": "string" },
+      "image": { "type": "string" },
+      "clientLogo": { "type": "string" },
+      "tags": { "type": "array", "items": { "type": "string" } }
+    },
+    "additionalProperties": true
+  }
+}

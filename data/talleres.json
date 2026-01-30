@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Introducción al Pentesting",
+    "icon": "fa-user-secret",
+    "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
+    "desc": "Fundamentos del hacking ético: reconocimiento, explotación y reporte.",
+    "date": "15 de Marzo, 2026",
+    "cost": "$45 USD",
+    "tags": ["Básico", "Hands-on"]
+  },
+  {
+    "id": 2,
+    "name": "OWASP Top 10 - Laboratorio",
+    "icon": "fa-bug",
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=800",
+    "desc": "Análisis y mitigación práctica de las 10 vulnerabilidades web más críticas.",
+    "date": "02 de Abril, 2026",
+    "cost": "$60 USD",
+    "tags": ["Intermedio", "Seguridad Web"]
+  },
+  {
+    "id": 3,
+    "name": "Pentesting a APIs",
+    "icon": "fa-network-wired",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+    "desc": "Evaluación de seguridad para APIs y microservicios, BOLA, ACLs y autenticación.",
+    "date": "20 de Abril, 2026",
+    "cost": "$75 USD",
+    "tags": ["Avanzado", "Backend Security"]
+  }
+]

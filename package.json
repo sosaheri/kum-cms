@@ -1,0 +1,26 @@
+{
+  "name": "mini-csm",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "kum:dev": "vite",
+    "kum:build": "vite build",
+    "kum:preview": "vite preview",
+    "kum:lint:data": "node scripts/validate-data.js",
+    "kum:assemble-theme": "node scripts/assemble-theme.js",
+    "kum:build-standalone": "node scripts/build-standalone.js",
+    "kum:new-theme": "node scripts/scaffold-theme.js",
+    "kum:help": "node scripts/kum-cli.js",
+
+    "dev": "npm run kum:dev",
+    "build": "npm run kum:build",
+    "preview": "npm run kum:preview",
+    "lint:data": "npm run kum:lint:data",
+    "assemble-theme": "npm run kum:assemble-theme",
+    "build-standalone": "npm run kum:build-standalone"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "ajv": "^8.12.0"
+  }
+}

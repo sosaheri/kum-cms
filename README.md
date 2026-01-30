@@ -1,0 +1,116 @@
+# mini-CMS (file-based)
+
+Este repositorio contiene una landing desacoplada que actúa como un mini-CMS usando archivos JSON/Markdown como fuente de verdad.
+
+Quick start
+
+1. Instalar dependencias (node 18+):
+
+```bash
+npm install
+```
+
+2. Desarrollo con Vite (hot reload):
+
+```bash
+npm run dev
+# abre http://localhost:5173
+```
+
+Qué incluye por defecto
+
+- `index.html` - plantilla pública que carga el motor y el theme.
+- `css/theme.css` - estilos del theme por defecto.
+- `lib/framework/` - motor modular:
+  - `core.js` - orquestador principal (ES module)
+  - `data.js` - capa de acceso a datos (fetch/save)
+  - `templates.js` - wrapper de plantillas
+  - `email.js` - wrapper para EmailJS
+- `js/config.js` - configuración del sitio y definición de colecciones (templates inline)
+- `data/*.json` - archivos de contenido (proyectos, talleres, etc.)
+
+Themes y plantillas
+
+- Para crear un nuevo theme, crea `themes/<mi-theme>/theme.css` y opcionalmente `themes/<mi-theme>/partials/` con fragmentos HTML.
+- El motor expone una función `render(templateFn, data)` en `lib/framework/templates.js` — los autores de themes pueden sustituir el render por partials/strings.
+
+Themes
+
+Sección rápida sobre themes:
+
+- Estructura recomendada: `themes/<name>/` contiene `theme.css`, `partials/manifest.json` y `partials/*.html`.
+- Puedes crear un preview estático (index) ensamblando partials con el script:
+
+```bash
+# generar index.html para 'detectalab' u otro theme
+npm run assemble-theme detectalab
+```
+
+- Para desarrollo dinámico el CMS leerá `js/config.js` → `theme: '<name>'` y cargará el theme activo en `#theme-root`. Consulta `themes/README.md` para más detalles.
+
+Assemble theme: crear un `index.html` estático
+
+Usa este comando cuando quieras generar un `index.html` listo para previsualizar o para entregar el theme como una página estática.
+
+Comandos:
+
+```bash
+# generar index.html para 'detectalab'
+npm run assemble-theme -- detectalab
+
+# generar para 'default' (sin argumento usa 'default')
+npm run assemble-theme
+```
+
+Qué produce:
+- Escribe `themes/<name>/index.html` concatenando los partials en el orden de `partials/manifest.json`.
+- `index.html` referenciará `theme.css` (local al theme), `../../lib/framework/core.css` y `./theme.js` (si existe).
+
+Qué significa "standalone" (entrega sin CMS):
+- Un `index.html` standalone es una página estática que se puede abrir en un navegador sin ejecutar el motor del CMS.
+- Para que sea realmente standalone debes incluir en el paquete:
+  - `index.html` (generado), `theme.css`, `theme.js` (si lo necesita), y la carpeta `assets/` con imágenes.
+  - Incluir `lib/framework/core.css` si el tema lo necesita, o adaptar `theme.css` para ser autosuficiente.
+  - Prerenderizar contenido dinámico (por ejemplo llenar `#projects-container`) porque `Core.loadCollections()` no se ejecutará en el entorno standalone.
+  - Asegurarte de que `theme.js` no dependa de APIs del CMS (por ejemplo, no llamar a `Core.*`), o mover la lógica necesaria dentro de `theme.js` para ejecutar independientemente.
+
+Uso típico:
+- Desarrollo: no necesitas `assemble-theme` para ver el theme en acción (usa `Core.setTheme()` o ajusta `js/config.js`).
+- QA/entrega: ejecutar `npm run assemble-theme <name>` para generar `index.html` y empaquetar `theme.css`, `assets/`, `theme.js`.
+
+Persistencia y edición
+
+- Actualmente el frontend lee `data/*.json` via `fetch`. Para editar desde la UI necesitarás exponer un pequeño servidor (archivo-based) que ofrezca endpoints CRUD en `/api/collections/:name`.
+- El diseño soporta guardar a través de `lib/framework/data.js` usando `saveCollection(name, items)` que intenta llamar a `/api/collections/:name`.
+
+Validación
+
+- Añade un script de validación (por ejemplo usando `ajv`) que verifique `data/*.json` contra un esquema antes de hacer deploy.
+
+Siguientes pasos recomendados
+
+- Implementar servidor Express ligero que lea/escriba `data/*.json` (opcionalmente con autenticación básica).
+- Crear UI de administración (`/admin`) que use la API para editar colecciones.
+- Añadir validación JSON con `ajv` y un `npm run lint:data`.
+
+Validación de datos
+
+1. Instala dependencias si no lo has hecho:
+
+```bash
+npm install
+```
+
+2. Ejecuta el validador de datos:
+
+```bash
+npm run lint:data
+```
+
+El comando valida los archivos en `data/` usando los esquemas en `schemas/`. Si devuelve estado distinto de 0, corrige los errores mostrados.
+
+Si quieres, empiezo por:
+- crear el servidor Express file-based + endpoint `/api/collections/:name`, o
+- avanzar con la Admin UI que edite colecciones en modo dev.
+
+Dime con cuál prefieres que continúe.

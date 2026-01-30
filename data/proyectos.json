@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Nexus Banking",
+    "clientLogo": "NEXUS",
+    "image": "https://images.unsplash.com/photo-1551288049-bbbda536ad00?auto=format&fit=crop&q=80&w=800",
+    "desc": "Plataforma core bancaria con microservicios en Node.js y arquitectura event-driven.",
+    "tags": ["Node.js", "Redis", "Kafka"]
+  },
+  {
+    "id": 2,
+    "name": "SecureLink VPN",
+    "clientLogo": "SECURELINK",
+    "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
+    "desc": "Infraestructura de red cifrada para despliegues gubernamentales.",
+    "tags": ["Golang", "Wireguard", "Security"]
+  }
+]
