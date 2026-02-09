@@ -1,3 +1,17 @@
+ # Kum CMS
+
+<p align="left">
+  <img src="https://img.shields.io/github/license/sosaheri/kum-cms" alt="License">
+  <img src="https://img.shields.io/github/stars/sosaheri/kum-cms?style=flat&color=yellow" alt="Stars">
+  <img src="https://img.shields.io/github/issues/sosaheri/kum-cms" alt="Issues">
+  <img src="https://img.shields.io/github/last-commit/sosaheri/kum-cms" alt="Last Commit">
+</p>
+
+---
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sosaheri/kum-cms)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsosaheri%2Fkum-cms)
+
 # mini-CMS (file-based)
 
 Este repositorio contiene una landing desacoplada que actúa como un mini-CMS usando archivos JSON/Markdown como fuente de verdad.
