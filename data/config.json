@@ -1,0 +1,10 @@
+{
+  "site": {
+    "title": "KUMI Demo Site",
+    "description": "Sitio de demostración generado por KUMI"
+  },
+  "hero": {
+    "title": "Bienvenido a KUMI",
+    "subtitle": "Micro-CMS modular y ligero"
+  }
+}

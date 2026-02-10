@@ -12,8 +12,7 @@
       "fields": ["title","subtitle","desc","bg_img","cta_text","cta_link"],
       "price_estimated": 0,
       "requires_external_plugin": false,
-      "protected": false,
-      "metadata": {}
+      "protected": false
     },
     {
       "id": "features-grid",
@@ -25,8 +24,7 @@
       "fields": ["section_title","features_list"],
       "price_estimated": 0,
       "requires_external_plugin": false,
-      "protected": false,
-      "metadata": {}
+      "protected": false
     },
     {
       "id": "2-col",
@@ -38,8 +36,7 @@
       "fields": ["title","text","media_url","distribution"],
       "price_estimated": 0,
       "requires_external_plugin": false,
-      "protected": false,
-      "metadata": {}
+      "protected": false
     },
     {
       "id": "3-col",
@@ -51,8 +48,7 @@
       "fields": ["title","text","media_url"],
       "price_estimated": 0,
       "requires_external_plugin": false,
-      "protected": false,
-      "metadata": {}
+      "protected": false
     },
     {
       "id": "pricing-base",
@@ -64,8 +60,7 @@
       "fields": ["plan_name","price","currency","features","payment_link"],
       "price_estimated": 0,
       "requires_external_plugin": false,
-      "protected": false,
-      "metadata": {}
+      "protected": false
     },
     {
       "id": "testimonials-base",
@@ -77,8 +72,7 @@
       "fields": ["testimonials_list"],
       "price_estimated": 0,
       "requires_external_plugin": false,
-      "protected": false,
-      "metadata": {}
+      "protected": false
     },
     {
       "id": "faq-base",
@@ -90,8 +84,7 @@
       "fields": ["questions"],
       "price_estimated": 0,
       "requires_external_plugin": false,
-      "protected": false,
-      "metadata": {}
+      "protected": false
     },
     {
       "id": "contact-base",
@@ -103,24 +96,7 @@
       "fields": ["title","email","phone"],
       "price_estimated": 0,
       "requires_external_plugin": false,
-      "protected": false,
-      "metadata": {}
-    },
-    {
-      "id": "pricing-table",
-      "name": "Pricing Table",
-      "type": "section",
-      "tier": "premium",
-      "path": "library/sections/premium/pricing-table.html",
-      "description": "Estructura de tabla de precios (premium).",
-      "price_estimated": 49,
-      "requires_external_plugin": false,
-      "protected": true,
-      "protection": {
-        "mode": "auth_token|on_demand_download",
-        "note": "Puede requerir descarga bajo demanda o estar encriptado; el builder debe solicitar auth_token cuando corresponda."
-      },
-      "metadata": {}
+      "protected": false
     }
   ]
 }
